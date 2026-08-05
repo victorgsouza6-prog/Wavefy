@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wavefy</title>
+
+    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- MENU LATERAL -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <img src="imagens/logo.png" alt="Wavefy">
+
+            <h2>Wavefy</h2>
+
+        </div>
+
+<nav>
+
+    <a href="index.html" class="ativo">
+        <i class="fa-solid fa-house"></i>
+        <span>Início</span>
+    </a>
+
+    <a href="musicas.html">
+        <i class="fa-solid fa-music"></i>
+        <span>Músicas</span>
+    </a>
+
+    <a href="albuns.html">
+        <i class="fa-solid fa-compact-disc"></i>
+        <span>Álbuns</span>
+    </a>
+
+    <a href="artistas.html">
+        <i class="fa-solid fa-user-group"></i>
+        <span>Artistas</span>
+    </a>
+
+    <a href="favoritos.html">
+        <i class="fa-solid fa-heart"></i>
+        <span>Favoritos</span>
+    </a>
+
+    <a href="playlists.html">
+        <i class="fa-solid fa-list"></i>
+        <span>Playlists</span>
+    </a>
+
+</nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+
+    <main class="content">
+
+        <!-- TOPO -->
+
+        <header class="topbar">
+
+            <div class="search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    id="pesquisa"
+                    type="text"
+                    placeholder="Buscar músicas, artistas ou álbuns">
+
+            </div>
+
+            <div class="user-area">
+
+<button class="premium" onclick="abrirPremium()">
+    ⭐ Premium
+</button>
+
+                <button class="icon-btn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+<div class="user" id="btnConta">
+
+    <img
+        src="imagens/perfil/usuario.png"
+        alt="Foto de perfil"
+        class="foto-perfil"
+    >
+
+    <div>
+
+        <strong id="saudacao">Olá 👋</strong>
+
+        <p>Victor</p>
+
+    </div>
+
+    <i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div class="menu-conta" id="menuConta">
+
+    <a href="#">
+        <i class="fa-solid fa-user"></i>
+        Meu Perfil
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-gear"></i>
+        Configurações
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-bell"></i>
+        Notificações
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-moon"></i>
+        Tema
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-circle-question"></i>
+        Ajuda
+    </a>
+
+    <hr>
+
+    <a href="#" class="sair">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Sair
+    </a>
+
+</div>
+
+
+
+            </div>
+
+        </header>
+
+        <!-- BANNER -->
+
+        <section class="hero">
+
+            <div>
+
+                <h1>Sua música.<br>Seu momento.</h1>
+
+                <p>Milhões de músicas para descobrir.</p>
+
+                <button class="btn-play">
+
+                    ▶ Explorar Agora
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- MÚSICAS -->
+
+        <section>
+
+            <div class="section-title">
+
+                <h2>🔥 Em Alta</h2>
+
+                <a href="#">Ver tudo</a>
+
+            </div>
+
+            <div id="musicas" class="cards">
+
+            </div>
+
+        </section>
+
+        <!-- ÁLBUNS -->
+
+        <section>
+
+            <div class="section-title">
+
+                <h2>💿 Álbuns Populares</h2>
+
+                <a href="#">Ver tudo</a>
+
+            </div>
+
+            <div id="albuns" class="cards">
+
+            </div>
+
+        </section>
+
+        <!-- ARTISTAS -->
+
+        <section>
+
+            <div class="section-title">
+
+                <h2>🎤 Artistas Populares</h2>
+
+                <a href="#">Ver tudo</a>
+
+            </div>
+
+            <div id="artistas" class="cards">
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- PLAYER -->
+
+<footer class="player">
+
+    <div class="player-left">
+
+        <img id="capaPlayer" src="imagens/capas/weeknd.jpg">
+
+        <div>
+
+            <h3 id="nomeMusica">
+                Blinding Lights
+            </h3>
+
+            <p id="nomeArtista">
+                The Weeknd
+            </p>
+
+        </div>
+
+    </div>
+
+<div class="player-center">
+
+    <button id="anterior">
+        <i class="fa-solid fa-backward-step"></i>
+    </button>
+
+    <button id="play">
+        <i class="fa-solid fa-play"></i>
+    </button>
+
+    <button id="proximo">
+        <i class="fa-solid fa-forward-step"></i>
+    </button>
+
+</div>
+
+<div class="player-right">
+
+    <span>00:00</span>
+
+    <input
+        type="range"
+        id="volume"
+        min="0"
+        max="100"
+        value="100">
+
+</div>
+
+</footer>
+<!-- MODAL PREMIUM -->
+
+<div id="modalPremium" class="modal">
+
+    <div class="modal-conteudo">
+
+        <span class="fechar" onclick="fecharPremium()">&times;</span>
+
+        <h2>💜 Wavefy Premium</h2>
+
+        <p>Escolha o plano ideal para você.</p>
+
+        <div class="planos">
+
+            <div class="plano">
+                <h3>🥉 Básico</h3>
+                <h1>R$ 20</h1>
+                <p>1 conta<br>Sem anúncios</p>
+                <button onclick="alert('Plano Básico selecionado!')">
+                    Assinar
+                </button>
+            </div>
+
+            <div class="plano destaque">
+                <h3>🥈 Plus</h3>
+                <h1>R$ 50</h1>
+        <p>
+            ✔ Sem anúncios<br>
+            ✔ Qualidade máxima<br>
+            ✔ Até 3 dispositivos
+        </p>
+        <button>Assinar</button>
+    </div>
+
+    <div class="plano">
+        <h3>🥇 Família</h3>
+        <h1>R$ 100</h1>
+        <p>
+            ✔ Sem anúncios<br>
+            ✔ Até 6 contas<br>
+            ✔ Todos os benefícios
+        </p>
+        <button>Assinar</button>
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+
+
+<audio id="audio"></audio>
+
+<script src="JS/home.js"></script>
+<script src="JS/player.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Wavefy</title>
+
+    <link rel="stylesheet" href="CSS/login.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="login">
+
+        <div class="logo-login">
+            <img src="imagens/logo.png" alt="Logo Wavefy">
+            <h1>Wavefy</h1>
+        </div>
+
+        <p id="textoLogin">A música do seu jeito.</p>
+
+        <div id="campoNome" class="campo oculto">
+
+            <i class="fa-solid fa-user"></i>
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Seu nome"
+                autocomplete="name"
+            >
+
+        </div>
+
+        <div class="campo">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="E-mail"
+                autocomplete="email"
+            >
+
+        </div>
+
+        <div class="campo">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <input
+                type="password"
+                id="senha"
+                placeholder="Senha"
+                autocomplete="current-password"
+            >
+
+            <button
+                type="button"
+                id="mostrarSenha"
+                class="mostrar-senha"
+                aria-label="Mostrar senha"
+            >
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+        <div id="campoConfirmarSenha" class="campo oculto">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <input
+                type="password"
+                id="confirmarSenha"
+                placeholder="Confirmar senha"
+                autocomplete="new-password"
+            >
+
+        </div>
+
+        <p id="mensagem" class="mensagem"></p>
+
+        <button
+            type="button"
+            id="btnEntrar"
+            class="btn-principal"
+        >
+            Entrar
+        </button>
+
+        <button
+            type="button"
+            id="btnCriarConta"
+            class="btn-secundario"
+        >
+            Criar conta
+        </button>
+
+        <button
+            type="button"
+            id="btnVoltarLogin"
+            class="btn-secundario oculto"
+        >
+            Já tenho uma conta
+        </button>
+
+    </div>
+
+</div>
+
+<script src="JS/login.js"></script>
+
+</body>
+</html>

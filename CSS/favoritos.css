@@ -1,0 +1,49 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+body{
+
+    background:#09090B;
+    color:white;
+}
+
+
+.container{
+
+    padding:40px;
+
+}
+
+
+#listaFavoritos{
+
+    margin-top:30px;
+
+}
+
+
+.musica{
+
+    background:#18181b;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:10px;
+
+}
+
+
+button{
+
+    background:#8b5cf6;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:20px;
+    cursor:pointer;
+
+}

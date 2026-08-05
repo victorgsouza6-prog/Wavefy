@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+body{
+    background:#09090B;
+    color:white;
+}
+
+
+.artista{
+    padding:40px;
+}
+
+
+#fotoArtista{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+
+h1{
+    font-size:40px;
+    margin-top:20px;
+}
+
+
+h2{
+    margin-top:40px;
+}
+
+
+.musica{
+    background:#18181b;
+    padding:15px;
+    margin-top:10px;
+    border-radius:10px;
+}
