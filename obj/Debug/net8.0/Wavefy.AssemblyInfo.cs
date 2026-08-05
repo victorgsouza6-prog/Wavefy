@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Wavefy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f16fe2bcac39dea53ea2f00e8d7c617f17bd90af")]
 [assembly: System.Reflection.AssemblyProductAttribute("Wavefy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Wavefy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
