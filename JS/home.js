@@ -532,13 +532,13 @@ window.abrirArtista = function(nome) {
 
 
 // ==========================
-// BLOQUEAR ACESSO SEM LOGIN
+// VERIFICAR LOGIN
 // ==========================
 
-if (localStorage.getItem("wavefyLogado") !== "true") {
-
-    window.location.href = "login.html";
-
+if (
+    sessionStorage.getItem("wavefyLogado") !== "true"
+) {
+    window.location.replace("login.html");
 }
 
 
@@ -547,13 +547,34 @@ if (localStorage.getItem("wavefyLogado") !== "true") {
 // ==========================
 
 const nomeUsuarioSalvo =
-    localStorage.getItem("wavefyUsuario");
+    sessionStorage.getItem("wavefyUsuario");
 
 const nomeUsuarioTela =
     document.querySelector(".user p");
 
 if (nomeUsuarioSalvo && nomeUsuarioTela) {
-
     nomeUsuarioTela.textContent = nomeUsuarioSalvo;
+}
+
+
+// ==========================
+// BOTÃO SAIR
+// ==========================
+
+const btnSair =
+    document.getElementById("btnSair");
+
+if (btnSair) {
+
+    btnSair.addEventListener("click", function(evento) {
+
+        evento.preventDefault();
+
+        sessionStorage.removeItem("wavefyLogado");
+        sessionStorage.removeItem("wavefyUsuario");
+
+        window.location.replace("login.html");
+
+    });
 
 }

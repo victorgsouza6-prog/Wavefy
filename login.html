@@ -1,9 +1,14 @@
+```html
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Login - Wavefy</title>
 
@@ -22,109 +27,144 @@
 
 <body>
 
-<div class="container">
+    <main class="container">
 
-    <div class="login">
+        <section class="login">
 
-        <div class="logo-login">
-            <img src="imagens/logo.png" alt="Logo Wavefy">
-            <h1>Wavefy</h1>
-        </div>
+            <div class="logo-login">
 
-        <p id="textoLogin">A música do seu jeito.</p>
+                <img
+                    src="imagens/logo.png"
+                    alt="Logo do Wavefy"
+                >
 
-        <div id="campoNome" class="campo oculto">
+                <h1>Wavefy</h1>
 
-            <i class="fa-solid fa-user"></i>
+            </div>
 
-            <input
-                type="text"
-                id="nome"
-                placeholder="Seu nome"
-                autocomplete="name"
+            <p id="textoLogin">
+                A música do seu jeito.
+            </p>
+
+            <!-- CAMPO NOME -->
+
+            <div
+                id="campoNome"
+                class="campo oculto"
             >
 
-        </div>
+                <i class="fa-solid fa-user"></i>
 
-        <div class="campo">
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Seu nome"
+                    autocomplete="name"
+                >
 
-            <i class="fa-solid fa-envelope"></i>
+            </div>
 
-            <input
-                type="email"
-                id="email"
-                placeholder="E-mail"
-                autocomplete="email"
+            <!-- CAMPO E-MAIL -->
+
+            <div class="campo">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="E-mail"
+                    autocomplete="email"
+                >
+
+            </div>
+
+            <!-- CAMPO SENHA -->
+
+            <div class="campo">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Senha"
+                    autocomplete="current-password"
+                >
+
+                <button
+                    type="button"
+                    id="mostrarSenha"
+                    class="mostrar-senha"
+                    aria-label="Mostrar senha"
+                >
+                    <i class="fa-solid fa-eye"></i>
+                </button>
+
+            </div>
+
+            <!-- CONFIRMAR SENHA -->
+
+            <div
+                id="campoConfirmarSenha"
+                class="campo oculto"
             >
 
-        </div>
+                <i class="fa-solid fa-lock"></i>
 
-        <div class="campo">
+                <input
+                    type="password"
+                    id="confirmarSenha"
+                    placeholder="Confirmar senha"
+                    autocomplete="new-password"
+                >
 
-            <i class="fa-solid fa-lock"></i>
+            </div>
 
-            <input
-                type="password"
-                id="senha"
-                placeholder="Senha"
-                autocomplete="current-password"
-            >
+            <!-- MENSAGEM -->
+
+            <p
+                id="mensagem"
+                class="mensagem"
+            ></p>
+
+            <!-- BOTÃO ENTRAR OU CADASTRAR -->
 
             <button
                 type="button"
-                id="mostrarSenha"
-                class="mostrar-senha"
-                aria-label="Mostrar senha"
+                id="btnEntrar"
+                class="btn-principal"
             >
-                <i class="fa-solid fa-eye"></i>
+                Entrar
             </button>
 
-        </div>
+            <!-- ABRIR CADASTRO -->
 
-        <div id="campoConfirmarSenha" class="campo oculto">
-
-            <i class="fa-solid fa-lock"></i>
-
-            <input
-                type="password"
-                id="confirmarSenha"
-                placeholder="Confirmar senha"
-                autocomplete="new-password"
+            <button
+                type="button"
+                id="btnCriarConta"
+                class="btn-secundario"
             >
+                Criar conta
+            </button>
 
-        </div>
+            <!-- VOLTAR AO LOGIN -->
 
-        <p id="mensagem" class="mensagem"></p>
+            <button
+                type="button"
+                id="btnVoltarLogin"
+                class="btn-secundario oculto"
+            >
+                Já tenho uma conta
+            </button>
 
-        <button
-            type="button"
-            id="btnEntrar"
-            class="btn-principal"
-        >
-            Entrar
-        </button>
+        </section>
 
-        <button
-            type="button"
-            id="btnCriarConta"
-            class="btn-secundario"
-        >
-            Criar conta
-        </button>
+    </main>
 
-        <button
-            type="button"
-            id="btnVoltarLogin"
-            class="btn-secundario oculto"
-        >
-            Já tenho uma conta
-        </button>
-
-    </div>
-
-</div>
-
-<script src="JS/login.js"></script>
+    <script src="JS/login.js"></script>
 
 </body>
+
 </html>
+```

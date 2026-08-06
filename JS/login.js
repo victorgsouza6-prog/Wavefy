@@ -45,14 +45,14 @@ let modoCadastro = false;
 // MENSAGEM
 // ==========================
 
-function exibirMensagem(texto, tipo){
+function exibirMensagem(texto, tipo) {
 
     mensagem.textContent = texto;
     mensagem.className = `mensagem ${tipo}`;
 
 }
 
-function limparMensagem(){
+function limparMensagem() {
 
     mensagem.textContent = "";
     mensagem.className = "mensagem";
@@ -64,7 +64,7 @@ function limparMensagem(){
 // ABRIR CADASTRO
 // ==========================
 
-function abrirCadastro(){
+function abrirCadastro() {
 
     modoCadastro = true;
 
@@ -79,7 +79,8 @@ function abrirCadastro(){
     textoLogin.textContent =
         "Crie sua conta no Wavefy.";
 
-    senhaInput.autocomplete = "new-password";
+    senhaInput.autocomplete =
+        "new-password";
 
     limparMensagem();
 
@@ -90,7 +91,7 @@ function abrirCadastro(){
 // VOLTAR PARA LOGIN
 // ==========================
 
-function voltarLogin(){
+function voltarLogin() {
 
     modoCadastro = false;
 
@@ -105,7 +106,8 @@ function voltarLogin(){
     textoLogin.textContent =
         "A música do seu jeito.";
 
-    senhaInput.autocomplete = "current-password";
+    senhaInput.autocomplete =
+        "current-password";
 
     nomeInput.value = "";
     confirmarSenhaInput.value = "";
@@ -119,7 +121,7 @@ function voltarLogin(){
 // CRIAR CONTA
 // ==========================
 
-function criarConta(){
+function criarConta() {
 
     const nome =
         nomeInput.value.trim();
@@ -133,12 +135,12 @@ function criarConta(){
     const confirmarSenha =
         confirmarSenhaInput.value;
 
-    if(
+    if (
         nome === "" ||
         email === "" ||
         senha === "" ||
         confirmarSenha === ""
-    ){
+    ) {
 
         exibirMensagem(
             "Preencha todos os campos.",
@@ -149,7 +151,7 @@ function criarConta(){
 
     }
 
-    if(!email.includes("@")){
+    if (!email.includes("@")) {
 
         exibirMensagem(
             "Digite um e-mail válido.",
@@ -160,7 +162,7 @@ function criarConta(){
 
     }
 
-    if(senha.length < 6){
+    if (senha.length < 6) {
 
         exibirMensagem(
             "A senha precisa ter pelo menos 6 caracteres.",
@@ -171,7 +173,7 @@ function criarConta(){
 
     }
 
-    if(senha !== confirmarSenha){
+    if (senha !== confirmarSenha) {
 
         exibirMensagem(
             "As senhas não são iguais.",
@@ -185,7 +187,7 @@ function criarConta(){
     const contaExistente =
         localStorage.getItem("wavefyConta");
 
-    if(contaExistente){
+    if (contaExistente) {
 
         exibirMensagem(
             "Já existe uma conta cadastrada neste navegador.",
@@ -228,7 +230,7 @@ function criarConta(){
 // ENTRAR
 // ==========================
 
-function fazerLogin(){
+function fazerLogin() {
 
     const email =
         emailInput.value.trim().toLowerCase();
@@ -236,7 +238,7 @@ function fazerLogin(){
     const senha =
         senhaInput.value;
 
-    if(email === "" || senha === ""){
+    if (email === "" || senha === "") {
 
         exibirMensagem(
             "Digite seu e-mail e sua senha.",
@@ -250,7 +252,7 @@ function fazerLogin(){
     const contaSalva =
         localStorage.getItem("wavefyConta");
 
-    if(!contaSalva){
+    if (!contaSalva) {
 
         exibirMensagem(
             "Nenhuma conta foi criada. Clique em Criar conta.",
@@ -261,10 +263,29 @@ function fazerLogin(){
 
     }
 
-    const conta =
-        JSON.parse(contaSalva);
+    let conta;
 
-    if(email !== conta.email){
+    try {
+
+        conta = JSON.parse(contaSalva);
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao carregar a conta:",
+            erro
+        );
+
+        exibirMensagem(
+            "Erro ao carregar a conta.",
+            "erro"
+        );
+
+        return;
+
+    }
+
+    if (email !== conta.email) {
 
         exibirMensagem(
             "E-mail incorreto.",
@@ -275,7 +296,7 @@ function fazerLogin(){
 
     }
 
-    if(senha !== conta.senha){
+    if (senha !== conta.senha) {
 
         exibirMensagem(
             "Senha incorreta.",
@@ -286,14 +307,24 @@ function fazerLogin(){
 
     }
 
-    localStorage.setItem(
+    // Login válido apenas durante a sessão atual
+    sessionStorage.setItem(
         "wavefyLogado",
         "true"
     );
 
-    localStorage.setItem(
+    sessionStorage.setItem(
         "wavefyUsuario",
         conta.nome
+    );
+
+    // Apaga um login antigo salvo no localStorage
+    localStorage.removeItem(
+        "wavefyLogado"
+    );
+
+    localStorage.removeItem(
+        "wavefyUsuario"
     );
 
     exibirMensagem(
@@ -303,7 +334,9 @@ function fazerLogin(){
 
     setTimeout(() => {
 
-        window.location.href = "index.html";
+        window.location.replace(
+            "index.html"
+        );
 
     }, 700);
 
@@ -314,63 +347,94 @@ function fazerLogin(){
 // BOTÕES
 // ==========================
 
-btnCriarConta.addEventListener(
-    "click",
-    abrirCadastro
-);
+if (btnCriarConta) {
 
-btnVoltarLogin.addEventListener(
-    "click",
-    voltarLogin
-);
+    btnCriarConta.addEventListener(
+        "click",
+        abrirCadastro
+    );
 
-btnEntrar.addEventListener("click", () => {
+}
 
-    limparMensagem();
+if (btnVoltarLogin) {
 
-    if(modoCadastro){
+    btnVoltarLogin.addEventListener(
+        "click",
+        voltarLogin
+    );
 
-        criarConta();
+}
 
-    }else{
+if (btnEntrar) {
 
-        fazerLogin();
+    btnEntrar.addEventListener(
+        "click",
+        function () {
 
-    }
+            limparMensagem();
 
-});
+            if (modoCadastro) {
+
+                criarConta();
+
+            } else {
+
+                fazerLogin();
+
+            }
+
+        }
+    );
+
+}
 
 
 // ==========================
 // MOSTRAR SENHA
 // ==========================
 
-mostrarSenha.addEventListener("click", () => {
+if (mostrarSenha) {
 
-    const senhaVisivel =
-        senhaInput.type === "text";
+    mostrarSenha.addEventListener(
+        "click",
+        function () {
 
-    senhaInput.type =
-        senhaVisivel ? "password" : "text";
+            const senhaVisivel =
+                senhaInput.type === "text";
 
-    mostrarSenha.innerHTML =
-        senhaVisivel
-            ? '<i class="fa-solid fa-eye"></i>'
-            : '<i class="fa-solid fa-eye-slash"></i>';
+            senhaInput.type =
+                senhaVisivel
+                    ? "password"
+                    : "text";
 
-});
+            mostrarSenha.innerHTML =
+                senhaVisivel
+                    ? '<i class="fa-solid fa-eye"></i>'
+                    : '<i class="fa-solid fa-eye-slash"></i>';
+
+        }
+    );
+
+}
 
 
 // ==========================
 // TECLA ENTER
 // ==========================
 
-document.addEventListener("keydown", (evento) => {
+document.addEventListener(
+    "keydown",
+    function (evento) {
 
-    if(evento.key === "Enter"){
+        if (
+            evento.key === "Enter" &&
+            btnEntrar
+        ) {
 
-        btnEntrar.click();
+            evento.preventDefault();
+            btnEntrar.click();
+
+        }
 
     }
-
-});
+);
