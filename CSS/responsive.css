@@ -1,146 +1,644 @@
 /* =====================================
-   TABLETS
+   RESPONSIVO — TABLET E CELULAR
 ===================================== */
 
-@media (max-width:1200px){
+@media (max-width: 900px) {
 
-    .sidebar{
-        width:90px;
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
-    .logo h2{
-        display:none;
+    body {
+        padding-bottom: 165px;
     }
 
-    .sidebar nav a{
-        justify-content:center;
+
+    /* ==========================
+       CONTEÚDO PRINCIPAL
+    ========================== */
+
+    .app {
+        display: block;
+        width: 100%;
     }
 
-    .sidebar nav a span{
-        display:none;
+    .content {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0 !important;
+        padding: 16px !important;
     }
 
-    .content{
-        margin-left:90px;
-        width:calc(100% - 90px);
+
+    /* ==========================
+       MENU INFERIOR
+    ========================== */
+
+    .sidebar {
+        position: fixed !important;
+
+        left: 0;
+        right: 0;
+        top: auto !important;
+        bottom: 0;
+
+        width: 100% !important;
+        height: 72px !important;
+
+        padding: 6px 8px !important;
+
+        display: flex;
+        align-items: center;
+
+        border-right: none !important;
+        border-top: 1px solid #29292f;
+
+        background: rgba(17, 17, 20, 0.97);
+
+        z-index: 1200;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        backdrop-filter: blur(15px);
     }
 
-    .player{
-        left:90px;
+    .sidebar::-webkit-scrollbar {
+        display: none;
     }
 
-    .hero h1{
-        font-size:42px;
-        line-height:48px;
+    .sidebar .logo {
+        display: none !important;
+    }
+
+    .sidebar nav {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 4px;
+    }
+
+    .sidebar nav a {
+        min-width: 64px;
+        height: 58px;
+
+        padding: 6px 5px !important;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 4px;
+
+        border-radius: 12px;
+
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    .sidebar nav a i {
+        font-size: 18px;
+    }
+
+    .sidebar nav a span {
+        font-size: 10px;
+    }
+
+
+    /* ==========================
+       TOPO
+    ========================== */
+
+    .topbar {
+        position: sticky;
+
+        top: 0;
+
+        width: 100%;
+
+        padding: 12px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 12px;
+
+        border: 1px solid #27272d;
+        border-radius: 16px;
+
+        background: rgba(9, 9, 11, 0.94);
+
+        z-index: 900;
+
+        backdrop-filter: blur(14px);
+    }
+
+    .search {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .search input {
+        width: 100%;
+
+        height: 48px;
+
+        padding-right: 14px;
+
+        font-size: 14px;
+    }
+
+    .user-area {
+        width: 100%;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        gap: 10px;
+    }
+
+    .user {
+        min-width: 0;
+
+        padding: 7px 10px;
+
+        border-radius: 14px;
+    }
+
+    .user .foto-perfil {
+        width: 38px;
+        height: 38px;
+    }
+
+    .user strong {
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .user p {
+        max-width: 100px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        font-size: 11px;
+    }
+
+    .icon-btn {
+        width: 42px;
+        height: 42px;
+
+        flex-shrink: 0;
+    }
+
+    .premium {
+        padding: 9px 12px;
+
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+
+    /* ==========================
+       MENU DA CONTA
+    ========================== */
+
+    .menu-conta {
+        position: fixed !important;
+
+        top: 118px !important;
+        right: 16px !important;
+        left: auto !important;
+
+        width: min(260px, calc(100vw - 32px));
+
+        z-index: 1500;
+    }
+
+
+    /* ==========================
+       BANNER
+    ========================== */
+
+    .hero {
+        width: 100%;
+        min-height: 230px;
+
+        margin-top: 18px;
+        padding: 28px 24px !important;
+
+        display: flex;
+        align-items: center;
+
+        border-radius: 22px;
+
+        background-position: center;
+        background-size: cover;
+    }
+
+    .hero > div {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(28px, 8vw, 40px);
+        line-height: 1.1;
+    }
+
+    .hero p {
+        margin-top: 14px;
+
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .btn-play {
+        margin-top: 18px;
+
+        padding: 12px 20px;
+
+        font-size: 13px;
+    }
+
+
+    /* ==========================
+       SEÇÕES
+    ========================== */
+
+    section {
+        width: 100%;
+    }
+
+    .section-title {
+        width: 100%;
+
+        margin-top: 28px;
+        margin-bottom: 14px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 10px;
+    }
+
+    .section-title h2 {
+        font-size: 22px;
+    }
+
+    .section-title a {
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+
+    /* ==========================
+       CARDS
+    ========================== */
+
+    .cards {
+        width: 100%;
+
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 14px !important;
+    }
+
+    .card {
+        position: relative;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+
+        padding: 10px !important;
+
+        border-radius: 17px;
+
+        overflow: hidden;
+    }
+
+    .card img {
+        display: block;
+
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
+
+        object-fit: cover;
+
+        border-radius: 13px;
+    }
+
+    .card h3 {
+        width: 100%;
+
+        margin-top: 10px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        font-size: 14px;
+    }
+
+    .card p {
+        width: 100%;
+
+        margin-top: 3px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        font-size: 12px;
+    }
+
+    .coracao,
+    .btn-playlist {
+        width: 34px !important;
+        height: 34px !important;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0 !important;
+
+        border-radius: 50%;
+
+        font-size: 14px;
+
+        z-index: 20;
+    }
+
+    .coracao {
+        top: 16px !important;
+        right: 16px !important;
+    }
+
+    .btn-playlist {
+        top: 54px !important;
+        right: 16px !important;
+    }
+
+
+    /* ==========================
+       PLAYER
+    ========================== */
+
+    .player {
+        position: fixed !important;
+
+        left: 8px !important;
+        right: 8px !important;
+        bottom: 78px !important;
+
+        width: auto !important;
+        height: 74px !important;
+
+        padding: 9px 12px !important;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 8px;
+
+        border: 1px solid #303038;
+        border-radius: 18px;
+
+        background: rgba(20, 20, 24, 0.97);
+
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+
+        z-index: 1100;
+
+        backdrop-filter: blur(18px);
+    }
+
+    .player-left {
+        min-width: 0;
+        flex: 1;
+
+        display: flex;
+        align-items: center;
+
+        gap: 9px;
+    }
+
+    .player-left img {
+        width: 50px !important;
+        height: 50px !important;
+
+        flex-shrink: 0;
+
+        object-fit: cover;
+
+        border-radius: 10px;
+    }
+
+    .player-left div {
+        min-width: 0;
+    }
+
+    .player-left h3 {
+        max-width: 115px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        font-size: 13px;
+    }
+
+    .player-left p {
+        max-width: 115px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        font-size: 11px;
+    }
+
+    .player-center {
+        display: flex;
+        align-items: center;
+
+        gap: 4px;
+    }
+
+    .player-center button {
+        width: 36px !important;
+        height: 36px !important;
+
+        padding: 0 !important;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        font-size: 14px;
+    }
+
+    #play {
+        width: 42px !important;
+        height: 42px !important;
+    }
+
+    .player-right {
+        display: none !important;
+    }
+
+
+    /* ==========================
+       MODAL PREMIUM
+    ========================== */
+
+    .modal {
+        padding: 15px;
+    }
+
+    .modal-conteudo {
+        width: 100%;
+        max-width: 420px;
+
+        max-height: 90vh;
+
+        padding: 24px 18px;
+
+        overflow-y: auto;
+    }
+
+    .planos {
+        display: flex;
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    .plano {
+        width: 100%;
     }
 
 }
 
+
 /* =====================================
-   CELULAR
+   CELULARES MENORES
 ===================================== */
 
-@media (max-width:768px){
+@media (max-width: 480px) {
 
-    .sidebar{
-        display:none;
+    .content {
+        padding: 12px !important;
     }
 
-    .content{
-        margin-left:0;
-        width:100%;
-        padding:20px;
-        padding-bottom:120px;
+    .topbar {
+        padding: 10px;
     }
 
-    .topbar{
-        flex-direction:column;
-        align-items:stretch;
+    .premium {
+        display: none !important;
     }
 
-    .search{
-        max-width:100%;
+    .user-area {
+        justify-content: space-between;
     }
 
-    .user-area{
-        justify-content:space-between;
-        flex-wrap:wrap;
+    .user {
+        margin-left: auto;
     }
 
-    .hero{
-        height:auto;
-        padding:30px;
+    .hero {
+        min-height: 215px;
+
+        padding: 24px 20px !important;
     }
 
-    .hero h1{
-        font-size:34px;
-        line-height:40px;
+    .hero h1 {
+        font-size: 30px;
     }
 
-    .hero p{
-        font-size:15px;
+    .section-title h2 {
+        font-size: 20px;
     }
 
-    .cards{
-        grid-template-columns:repeat(2,1fr);
-        gap:15px;
+    .cards {
+        gap: 10px !important;
     }
 
-    .card h3{
-        font-size:16px;
+    .card {
+        padding: 8px !important;
     }
 
-    .player{
-        left:0;
-        width:100%;
-        height:85px;
-        padding:0 15px;
+    .card h3 {
+        font-size: 13px;
     }
 
-    .player-left img{
-        width:50px;
-        height:50px;
+    .card p {
+        font-size: 11px;
     }
 
-    .player-right{
-        display:none;
+    .coracao,
+    .btn-playlist {
+        right: 12px !important;
+
+        width: 31px !important;
+        height: 31px !important;
+    }
+
+    .coracao {
+        top: 12px !important;
+    }
+
+    .btn-playlist {
+        top: 47px !important;
+    }
+
+    .player-left h3,
+    .player-left p {
+        max-width: 90px;
+    }
+
+    .sidebar nav a {
+        min-width: 62px;
     }
 
 }
 
-/* =====================================
-   TELAS MUITO PEQUENAS
-===================================== */
-
-@media (max-width:500px){
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .hero h1{
-        font-size:28px;
-        line-height:34px;
-    }
-
-    .premium{
-        display:none;
-    }
-
-    .user p{
-        display:none;
-    }
-
-}
 
 /* =====================================
-   MONITORES GRANDES
+   CELULARES MUITO PEQUENOS
 ===================================== */
 
-@media (min-width:1700px){
+@media (max-width: 340px) {
 
-    .cards{
-        grid-template-columns:repeat(6,1fr);
+    .cards {
+        grid-template-columns: 1fr !important;
+    }
+
+    .player-center button:not(#play) {
+        display: none;
+    }
+
+    .player-left h3,
+    .player-left p {
+        max-width: 120px;
     }
 
 }
