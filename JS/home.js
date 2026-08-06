@@ -171,7 +171,6 @@ atualizarListaSalva("favoritos");
 
 // ==========================
 // ARTISTAS
-// USA AS MESMAS IMAGENS PNG
 // ==========================
 
 const artistas = musicas.map((musica) => {
@@ -186,7 +185,6 @@ const artistas = musicas.map((musica) => {
 
 // ==========================
 // ÁLBUNS
-// USA AS MESMAS 16 IMAGENS
 // ==========================
 
 const albuns = musicas.map((musica) => {
@@ -228,7 +226,10 @@ if (divMusicas) {
 
         divMusicas.innerHTML += `
 
-            <div class="card" onclick="selecionarMusica(${indice})">
+            <div
+                class="card"
+                onclick="selecionarMusica(${indice})"
+            >
 
                 <button
                     type="button"
@@ -362,9 +363,13 @@ if (pesquisa) {
                 titulo.includes(texto) ||
                 artista.includes(texto)
             ) {
+
                 card.style.display = "block";
+
             } else {
+
                 card.style.display = "none";
+
             }
 
         });
@@ -525,19 +530,30 @@ window.abrirArtista = function(nome) {
 
 };
 
+
+// ==========================
 // BLOQUEAR ACESSO SEM LOGIN
+// ==========================
 
 if (localStorage.getItem("wavefyLogado") !== "true") {
+
     window.location.href = "login.html";
+
 }
 
 
+// ==========================
 // MOSTRAR NOME DO USUÁRIO
+// ==========================
 
-const nomeUsuarioSalvo = localStorage.getItem("wavefyUsuario");
+const nomeUsuarioSalvo =
+    localStorage.getItem("wavefyUsuario");
 
-const nomeUsuarioTela = document.querySelector(".user p");
+const nomeUsuarioTela =
+    document.querySelector(".user p");
 
 if (nomeUsuarioSalvo && nomeUsuarioTela) {
+
     nomeUsuarioTela.textContent = nomeUsuarioSalvo;
+
 }
