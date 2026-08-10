@@ -12,31 +12,18 @@
 
     <title>Wavefy</title>
 
-    <!-- ========================================
-         VERIFICAR LOGIN
-    ========================================= -->
-
+    <!-- VERIFICAR LOGIN -->
     <script>
         if (sessionStorage.getItem("wavefyLogado") !== "true") {
             window.location.replace("login.html");
         }
     </script>
 
-
-    <!-- ========================================
-         CSS
-    ========================================= -->
-
+    <!-- CSS -->
     <link rel="stylesheet" href="CSS/home.css">
-
-    <!-- v=10 força o celular a carregar o CSS novo -->
     <link rel="stylesheet" href="CSS/responsive.css?v=10">
 
-
-    <!-- ========================================
-         FONTE
-    ========================================= -->
-
+    <!-- FONTE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
@@ -44,18 +31,13 @@
         rel="stylesheet"
     >
 
-
-    <!-- ========================================
-         ÍCONES
-    ========================================= -->
-
+    <!-- ÍCONES -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     >
 
 </head>
-
 
 <body>
 
@@ -68,13 +50,10 @@
 
 
     <!-- =================================================
-         MENU LATERAL
+         MENU
     ================================================= -->
 
     <aside class="sidebar">
-
-
-        <!-- LOGO -->
 
         <div class="logo">
 
@@ -88,64 +67,44 @@
         </div>
 
 
-        <!-- NAVEGAÇÃO -->
-
         <nav>
 
             <a
                 href="index.html"
                 class="ativo"
             >
-
                 <i class="fa-solid fa-house"></i>
-
                 <span>Início</span>
-
             </a>
 
 
             <a href="musicas.html">
-
                 <i class="fa-solid fa-music"></i>
-
                 <span>Músicas</span>
-
             </a>
 
 
             <a href="albuns.html">
-
                 <i class="fa-solid fa-compact-disc"></i>
-
                 <span>Álbuns</span>
-
             </a>
 
 
             <a href="artistas.html">
-
                 <i class="fa-solid fa-user-group"></i>
-
                 <span>Artistas</span>
-
             </a>
 
 
             <a href="favoritos.html">
-
                 <i class="fa-solid fa-heart"></i>
-
                 <span>Favoritos</span>
-
             </a>
 
 
             <a href="playlists.html">
-
                 <i class="fa-solid fa-list"></i>
-
                 <span>Playlists</span>
-
             </a>
 
         </nav>
@@ -155,7 +114,7 @@
 
 
     <!-- =================================================
-         CONTEÚDO PRINCIPAL
+         CONTEÚDO
     ================================================= -->
 
     <main class="content">
@@ -185,40 +144,28 @@
 
 
 
-            <!-- USUÁRIO -->
+            <!-- ÁREA DO USUÁRIO -->
 
             <div class="user-area">
 
-
-                <!-- PREMIUM -->
 
                 <button
                     type="button"
                     class="premium"
                     onclick="abrirPremium()"
                 >
-
                     ⭐ Premium
-
                 </button>
 
-
-
-                <!-- NOTIFICAÇÕES -->
 
                 <button
                     type="button"
                     class="icon-btn"
                     aria-label="Notificações"
                 >
-
                     <i class="fa-regular fa-bell"></i>
-
                 </button>
 
-
-
-                <!-- CONTA -->
 
                 <div
                     class="user"
@@ -258,49 +205,33 @@
                     id="menuConta"
                 >
 
-
                     <a href="#">
-
                         <i class="fa-solid fa-user"></i>
-
                         Meu Perfil
-
                     </a>
 
 
                     <a href="#">
-
                         <i class="fa-solid fa-gear"></i>
-
                         Configurações
-
                     </a>
 
 
                     <a href="#">
-
                         <i class="fa-solid fa-bell"></i>
-
                         Notificações
-
                     </a>
 
 
                     <a href="#">
-
                         <i class="fa-solid fa-moon"></i>
-
                         Tema
-
                     </a>
 
 
                     <a href="#">
-
                         <i class="fa-solid fa-circle-question"></i>
-
                         Ajuda
-
                     </a>
 
 
@@ -312,11 +243,8 @@
                         class="sair"
                         id="btnSair"
                     >
-
                         <i class="fa-solid fa-right-from-bracket"></i>
-
                         Sair
-
                     </a>
 
                 </div>
@@ -369,12 +297,9 @@
 
         <section class="secao-musicas">
 
-
             <div class="section-title">
 
-                <h2>
-                    🔥 Em Alta
-                </h2>
+                <h2>🔥 Em Alta</h2>
 
                 <a href="musicas.html">
                     Ver tudo
@@ -383,6 +308,7 @@
             </div>
 
 
+            <!-- AS MÚSICAS SÃO CRIADAS PELO JAVASCRIPT -->
             <div
                 id="musicas"
                 class="cards"
@@ -398,12 +324,9 @@
 
         <section class="secao-albuns">
 
-
             <div class="section-title">
 
-                <h2>
-                    💿 Álbuns Populares
-                </h2>
+                <h2>💿 Álbuns Populares</h2>
 
                 <a href="albuns.html">
                     Ver tudo
@@ -427,12 +350,9 @@
 
         <section class="secao-artistas">
 
-
             <div class="section-title">
 
-                <h2>
-                    🎤 Artistas Populares
-                </h2>
+                <h2>🎤 Artistas Populares</h2>
 
                 <a href="artistas.html">
                     Ver tudo
@@ -465,7 +385,7 @@
 >
 
 
-    <!-- MÚSICA -->
+    <!-- CAPA + NOME -->
 
     <div class="player-left">
 
@@ -502,23 +422,17 @@
             id="anterior"
             aria-label="Música anterior"
         >
-
             <i class="fa-solid fa-backward-step"></i>
-
         </button>
-
 
 
         <button
             type="button"
             id="play"
-            aria-label="Tocar música"
+            aria-label="Tocar ou pausar"
         >
-
             <i class="fa-solid fa-play"></i>
-
         </button>
-
 
 
         <button
@@ -526,9 +440,7 @@
             id="proximo"
             aria-label="Próxima música"
         >
-
             <i class="fa-solid fa-forward-step"></i>
-
         </button>
 
 
@@ -543,6 +455,7 @@
         <span id="tempoAtual">
             00:00
         </span>
+
 
         <input
             type="range"
@@ -561,6 +474,17 @@
 
 
 <!-- =====================================================
+     IMPORTANTE - ÁUDIO QUE TOCA AS MÚSICAS
+===================================================== -->
+
+<audio
+    id="audio"
+    preload="metadata"
+></audio>
+
+
+
+<!-- =====================================================
      MODAL PREMIUM
 ===================================================== -->
 
@@ -569,11 +493,8 @@
     id="modalPremium"
 >
 
-
     <div class="modal-conteudo">
 
-
-        <!-- FECHAR -->
 
         <button
             type="button"
@@ -581,11 +502,8 @@
             onclick="fecharPremium()"
             aria-label="Fechar"
         >
-
             &times;
-
         </button>
-
 
 
         <h2>
@@ -598,8 +516,6 @@
         </p>
 
 
-
-        <!-- PLANOS -->
 
         <div class="planos">
 
@@ -626,9 +542,7 @@
                     type="button"
                     onclick="alert('Plano Básico selecionado!')"
                 >
-
                     Assinar
-
                 </button>
 
             </div>
@@ -655,9 +569,7 @@
 
 
                 <button type="button">
-
                     Assinar
-
                 </button>
 
             </div>
@@ -684,9 +596,7 @@
 
 
                 <button type="button">
-
                     Assinar
-
                 </button>
 
             </div>
@@ -704,7 +614,12 @@
      JAVASCRIPT
 ===================================================== -->
 
-<script src="JS/home.js"></script>
+<!-- PRIMEIRO HOME -->
+<script src="JS/home.js?v=10"></script>
+
+<!-- DEPOIS PLAYER -->
+<script src="JS/player.js?v=10"></script>
+
 
 </body>
 
