@@ -331,3 +331,369 @@
     }
 
 }
+
+/* =====================================================
+   WAVEFY - CORREÇÃO FORÇADA PARA CELULAR
+   COLOCAR NO FINAL DO responsive.css
+===================================================== */
+
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .app {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 100vh;
+    }
+
+
+    /* ==========================
+       CONTEÚDO PRINCIPAL
+    ========================== */
+
+    main,
+    .main,
+    .main-content,
+    .conteudo,
+    .conteudo-principal {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        padding-bottom: 150px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* ==========================
+       TOPO
+    ========================== */
+
+    header,
+    .header,
+    .topo {
+        width: 100% !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 8px !important;
+
+        padding: 12px 0 !important;
+    }
+
+
+    /* PESQUISA */
+
+    .pesquisa,
+    .barra-pesquisa,
+    .search {
+        flex: 1 !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        min-width: 0 !important;
+    }
+
+    .pesquisa input,
+    .barra-pesquisa input,
+    .search input {
+        width: 100% !important;
+
+        font-size: 12px !important;
+
+        padding: 12px !important;
+    }
+
+
+    /* ==========================
+       HERO / BANNER
+    ========================== */
+
+    .hero,
+    .banner,
+    .hero-content,
+    .banner-content,
+    .inicio-banner {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        min-height: auto !important;
+
+        margin: 15px 0 30px 0 !important;
+
+        padding: 25px 20px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .hero h1,
+    .banner h1,
+    .hero-content h1,
+    .inicio-banner h1 {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        font-size: 36px !important;
+        line-height: 1.05 !important;
+
+        word-break: normal !important;
+    }
+
+    .hero p,
+    .banner p,
+    .hero-content p {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+    }
+
+
+    /* ==========================
+       TÍTULO EM ALTA
+    ========================== */
+
+    .secao-titulo,
+    .titulo-secao {
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        width: 100% !important;
+    }
+
+
+    /* ==========================
+       MÚSICAS
+    ========================== */
+
+    #musicas,
+    .musicas,
+    .grid-musicas,
+    .lista-musicas,
+    .cards-musicas {
+        width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 14px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+
+    /* CARD */
+
+    .card,
+    .card-musica {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        padding: 9px !important;
+
+        box-sizing: border-box !important;
+
+        border-radius: 14px !important;
+    }
+
+
+    .card img,
+    .card-musica img {
+        width: 100% !important;
+        height: auto !important;
+
+        aspect-ratio: 1 / 1 !important;
+
+        object-fit: cover !important;
+
+        border-radius: 11px !important;
+    }
+
+
+    .card h3,
+    .card-musica h3 {
+        font-size: 13px !important;
+
+        margin-top: 8px !important;
+
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+
+    .card p,
+    .card-musica p {
+        font-size: 11px !important;
+
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+
+    /* ==========================
+       MENU LATERAL VIRA MENU
+       INFERIOR NO CELULAR
+    ========================== */
+
+    .sidebar {
+        position: fixed !important;
+
+        top: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: 68px !important;
+
+        padding: 6px 8px !important;
+
+        margin: 0 !important;
+
+        background: #111114 !important;
+
+        border-right: none !important;
+        border-top: 1px solid #27272a !important;
+
+        z-index: 99999 !important;
+
+        box-sizing: border-box !important;
+
+        display: block !important;
+    }
+
+
+    /* ESCONDE LOGO */
+
+    .sidebar .logo {
+        display: none !important;
+    }
+
+
+    /* MENU TEM QUE FICAR DEITADO */
+
+    .sidebar nav {
+        width: 100% !important;
+        height: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: space-around !important;
+
+        gap: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    /* CADA BOTÃO */
+
+    .sidebar nav a {
+        width: auto !important;
+        height: 100% !important;
+
+        flex: 1 !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 3px !important;
+
+        margin: 0 !important;
+
+        padding: 4px 2px !important;
+
+        font-size: 9px !important;
+
+        border-radius: 10px !important;
+    }
+
+
+    .sidebar nav a i {
+        font-size: 18px !important;
+    }
+
+
+    .sidebar nav a span {
+        font-size: 9px !important;
+    }
+
+
+    /* ITEM ATIVO */
+
+    .sidebar nav a.ativo {
+        background: transparent !important;
+        color: #8a2be2 !important;
+    }
+
+
+    /* ==========================
+       PLAYER
+    ========================== */
+
+    .player,
+    .player-musica,
+    .player-playlist {
+        position: fixed !important;
+
+        left: 8px !important;
+        right: 8px !important;
+        bottom: 76px !important;
+
+        width: auto !important;
+
+        padding: 8px 10px !important;
+
+        border-radius: 14px !important;
+
+        z-index: 99998 !important;
+    }
+
+
+    .player-musica-info img {
+        width: 43px !important;
+        height: 43px !important;
+
+        object-fit: cover !important;
+
+        border-radius: 7px !important;
+    }
+
+}
