@@ -12,17 +12,30 @@
 
     <title>Wavefy</title>
 
-    <!-- VERIFICAR LOGIN -->
+    <!-- ========================================
+         VERIFICAR LOGIN
+    ========================================= -->
+
     <script>
-        if (
-            sessionStorage.getItem("wavefyLogado") !== "true"
-        ) {
+        if (sessionStorage.getItem("wavefyLogado") !== "true") {
             window.location.replace("login.html");
         }
     </script>
 
+
+    <!-- ========================================
+         CSS
+    ========================================= -->
+
     <link rel="stylesheet" href="CSS/home.css">
-    <link rel="stylesheet" href="CSS/responsive.css">
+
+    <!-- v=10 força o celular a carregar o CSS novo -->
+    <link rel="stylesheet" href="CSS/responsive.css?v=10">
+
+
+    <!-- ========================================
+         FONTE
+    ========================================= -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -31,6 +44,11 @@
         rel="stylesheet"
     >
 
+
+    <!-- ========================================
+         ÍCONES
+    ========================================= -->
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -38,65 +56,119 @@
 
 </head>
 
+
 <body>
+
+
+<!-- =====================================================
+     APP
+===================================================== -->
 
 <div class="app">
 
-    <!-- MENU LATERAL -->
+
+    <!-- =================================================
+         MENU LATERAL
+    ================================================= -->
 
     <aside class="sidebar">
 
+
+        <!-- LOGO -->
+
         <div class="logo">
 
-            <img src="imagens/logo.png" alt="Wavefy">
+            <img
+                src="imagens/logo.png"
+                alt="Wavefy"
+            >
 
             <h2>Wavefy</h2>
 
         </div>
 
+
+        <!-- NAVEGAÇÃO -->
+
         <nav>
 
-            <a href="index.html" class="ativo">
+            <a
+                href="index.html"
+                class="ativo"
+            >
+
                 <i class="fa-solid fa-house"></i>
+
                 <span>Início</span>
+
             </a>
+
 
             <a href="musicas.html">
+
                 <i class="fa-solid fa-music"></i>
+
                 <span>Músicas</span>
+
             </a>
+
 
             <a href="albuns.html">
+
                 <i class="fa-solid fa-compact-disc"></i>
+
                 <span>Álbuns</span>
+
             </a>
+
 
             <a href="artistas.html">
+
                 <i class="fa-solid fa-user-group"></i>
+
                 <span>Artistas</span>
+
             </a>
+
 
             <a href="favoritos.html">
+
                 <i class="fa-solid fa-heart"></i>
+
                 <span>Favoritos</span>
+
             </a>
 
+
             <a href="playlists.html">
+
                 <i class="fa-solid fa-list"></i>
+
                 <span>Playlists</span>
+
             </a>
 
         </nav>
 
     </aside>
 
-    <!-- CONTEÚDO -->
+
+
+    <!-- =================================================
+         CONTEÚDO PRINCIPAL
+    ================================================= -->
 
     <main class="content">
 
-        <!-- TOPO -->
+
+        <!-- =============================================
+             TOPO
+        ============================================= -->
 
         <header class="topbar">
+
+
+            <!-- PESQUISA -->
 
             <div class="search">
 
@@ -106,27 +178,52 @@
                     id="pesquisa"
                     type="text"
                     placeholder="Buscar músicas, artistas ou álbuns"
+                    autocomplete="off"
                 >
 
             </div>
 
+
+
+            <!-- USUÁRIO -->
+
             <div class="user-area">
+
+
+                <!-- PREMIUM -->
 
                 <button
                     type="button"
                     class="premium"
                     onclick="abrirPremium()"
                 >
+
                     ⭐ Premium
+
                 </button>
 
-                <button type="button" class="icon-btn">
+
+
+                <!-- NOTIFICAÇÕES -->
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    aria-label="Notificações"
+                >
 
                     <i class="fa-regular fa-bell"></i>
 
                 </button>
 
-                <div class="user" id="btnConta">
+
+
+                <!-- CONTA -->
+
+                <div
+                    class="user"
+                    id="btnConta"
+                >
 
                     <img
                         src="imagens/perfil/usuario.png"
@@ -134,48 +231,87 @@
                         class="foto-perfil"
                     >
 
+
                     <div>
 
-                        <strong id="saudacao">Olá 👋</strong>
+                        <strong id="saudacao">
+                            Olá 👋
+                        </strong>
 
-                        <p id="nomeUsuario">Victor</p>
+                        <p id="nomeUsuario">
+                            Victor
+                        </p>
 
                     </div>
+
 
                     <i class="fa-solid fa-chevron-down"></i>
 
                 </div>
 
-                <div class="menu-conta" id="menuConta">
+
+
+                <!-- MENU DA CONTA -->
+
+                <div
+                    class="menu-conta"
+                    id="menuConta"
+                >
+
 
                     <a href="#">
+
                         <i class="fa-solid fa-user"></i>
+
                         Meu Perfil
+
                     </a>
 
+
                     <a href="#">
+
                         <i class="fa-solid fa-gear"></i>
+
                         Configurações
+
                     </a>
 
+
                     <a href="#">
+
                         <i class="fa-solid fa-bell"></i>
+
                         Notificações
+
                     </a>
 
+
                     <a href="#">
+
                         <i class="fa-solid fa-moon"></i>
+
                         Tema
+
                     </a>
 
+
                     <a href="#">
+
                         <i class="fa-solid fa-circle-question"></i>
+
                         Ajuda
+
                     </a>
+
 
                     <hr>
 
-                    <a href="#" class="sair" id="btnSair">
+
+                    <a
+                        href="#"
+                        class="sair"
+                        id="btnSair"
+                    >
 
                         <i class="fa-solid fa-right-from-bracket"></i>
 
@@ -189,7 +325,11 @@
 
         </header>
 
-        <!-- BANNER -->
+
+
+        <!-- =============================================
+             BANNER
+        ============================================= -->
 
         <section class="hero">
 
@@ -200,11 +340,20 @@
                     Seu momento.
                 </h1>
 
-                <p>Milhões de músicas para descobrir.</p>
 
-                <button type="button" class="btn-play">
+                <p>
+                    Milhões de músicas para descobrir.
+                </p>
 
-                    ▶ Explorar Agora
+
+                <button
+                    type="button"
+                    class="btn-play"
+                >
+
+                    <i class="fa-solid fa-play"></i>
+
+                    Explorar Agora
 
                 </button>
 
@@ -212,61 +361,111 @@
 
         </section>
 
-        <!-- MÚSICAS -->
 
-        <section>
 
-            <div class="section-title">
+        <!-- =============================================
+             MÚSICAS
+        ============================================= -->
 
-                <h2>🔥 Em Alta</h2>
+        <section class="secao-musicas">
 
-                <a href="musicas.html">Ver tudo</a>
-
-            </div>
-
-            <div id="musicas" class="cards"></div>
-
-        </section>
-
-        <!-- ÁLBUNS -->
-
-        <section>
 
             <div class="section-title">
 
-                <h2>💿 Álbuns Populares</h2>
+                <h2>
+                    🔥 Em Alta
+                </h2>
 
-                <a href="albuns.html">Ver tudo</a>
+                <a href="musicas.html">
+                    Ver tudo
+                </a>
 
             </div>
 
-            <div id="albuns" class="cards"></div>
+
+            <div
+                id="musicas"
+                class="cards"
+            ></div>
 
         </section>
 
-        <!-- ARTISTAS -->
 
-        <section>
+
+        <!-- =============================================
+             ÁLBUNS
+        ============================================= -->
+
+        <section class="secao-albuns">
+
 
             <div class="section-title">
 
-                <h2>🎤 Artistas Populares</h2>
+                <h2>
+                    💿 Álbuns Populares
+                </h2>
 
-                <a href="artistas.html">Ver tudo</a>
+                <a href="albuns.html">
+                    Ver tudo
+                </a>
 
             </div>
 
-            <div id="artistas" class="cards"></div>
+
+            <div
+                id="albuns"
+                class="cards"
+            ></div>
 
         </section>
+
+
+
+        <!-- =============================================
+             ARTISTAS
+        ============================================= -->
+
+        <section class="secao-artistas">
+
+
+            <div class="section-title">
+
+                <h2>
+                    🎤 Artistas Populares
+                </h2>
+
+                <a href="artistas.html">
+                    Ver tudo
+                </a>
+
+            </div>
+
+
+            <div
+                id="artistas"
+                class="cards"
+            ></div>
+
+        </section>
+
 
     </main>
 
 </div>
 
-<!-- PLAYER -->
 
-<footer class="player">
+
+<!-- =====================================================
+     PLAYER
+===================================================== -->
+
+<div
+    class="player"
+    id="player"
+>
+
+
+    <!-- MÚSICA -->
 
     <div class="player-left">
 
@@ -276,41 +475,74 @@
             alt="Capa da música"
         >
 
+
         <div>
 
-            <h3 id="nomeMusica">VEIGH</h3>
+            <h3 id="nomeMusica">
+                VEIGH
+            </h3>
 
-            <p id="nomeArtista">VEIGH</p>
+            <p id="nomeArtista">
+                VEIGH
+            </p>
 
         </div>
 
     </div>
 
+
+
+    <!-- CONTROLES -->
+
     <div class="player-center">
 
-        <button type="button" id="anterior">
+
+        <button
+            type="button"
+            id="anterior"
+            aria-label="Música anterior"
+        >
 
             <i class="fa-solid fa-backward-step"></i>
 
         </button>
 
-        <button type="button" id="play">
+
+
+        <button
+            type="button"
+            id="play"
+            aria-label="Tocar música"
+        >
 
             <i class="fa-solid fa-play"></i>
 
         </button>
 
-        <button type="button" id="proximo">
+
+
+        <button
+            type="button"
+            id="proximo"
+            aria-label="Próxima música"
+        >
 
             <i class="fa-solid fa-forward-step"></i>
 
         </button>
 
+
     </div>
+
+
+
+    <!-- VOLUME -->
 
     <div class="player-right">
 
-        <span>00:00</span>
+        <span id="tempoAtual">
+            00:00
+        </span>
 
         <input
             type="range"
@@ -318,56 +550,102 @@
             min="0"
             max="100"
             value="100"
+            aria-label="Volume"
         >
 
     </div>
 
-</footer>
 
-<!-- MODAL PREMIUM -->
+</div>
 
-<div id="modalPremium" class="modal">
+
+
+<!-- =====================================================
+     MODAL PREMIUM
+===================================================== -->
+
+<div
+    class="modal"
+    id="modalPremium"
+>
+
 
     <div class="modal-conteudo">
 
-        <span
+
+        <!-- FECHAR -->
+
+        <button
+            type="button"
             class="fechar"
             onclick="fecharPremium()"
+            aria-label="Fechar"
         >
+
             &times;
-        </span>
 
-        <h2>💜 Wavefy Premium</h2>
+        </button>
 
-        <p>Escolha o plano ideal para você.</p>
+
+
+        <h2>
+            💜 Wavefy Premium
+        </h2>
+
+
+        <p>
+            Escolha o plano ideal para você.
+        </p>
+
+
+
+        <!-- PLANOS -->
 
         <div class="planos">
 
+
+            <!-- BÁSICO -->
+
             <div class="plano">
 
-                <h3>🥉 Básico</h3>
+                <h3>
+                    🥉 Básico
+                </h3>
 
-                <h1>R$ 20</h1>
+                <h1>
+                    R$ 20
+                </h1>
 
                 <p>
                     1 conta<br>
                     Sem anúncios
                 </p>
 
+
                 <button
                     type="button"
                     onclick="alert('Plano Básico selecionado!')"
                 >
+
                     Assinar
+
                 </button>
 
             </div>
 
+
+
+            <!-- PLUS -->
+
             <div class="plano destaque">
 
-                <h3>🥈 Plus</h3>
+                <h3>
+                    🥈 Plus
+                </h3>
 
-                <h1>R$ 50</h1>
+                <h1>
+                    R$ 50
+                </h1>
 
                 <p>
                     ✔ Sem anúncios<br>
@@ -375,17 +653,28 @@
                     ✔ Até 3 dispositivos
                 </p>
 
+
                 <button type="button">
+
                     Assinar
+
                 </button>
 
             </div>
 
+
+
+            <!-- FAMÍLIA -->
+
             <div class="plano">
 
-                <h3>🥇 Família</h3>
+                <h3>
+                    🥇 Família
+                </h3>
 
-                <h1>R$ 100</h1>
+                <h1>
+                    R$ 100
+                </h1>
 
                 <p>
                     ✔ Sem anúncios<br>
@@ -393,11 +682,15 @@
                     ✔ Todos os benefícios
                 </p>
 
+
                 <button type="button">
+
                     Assinar
+
                 </button>
 
             </div>
+
 
         </div>
 
@@ -405,10 +698,13 @@
 
 </div>
 
-<audio id="audio" preload="metadata"></audio>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script src="JS/home.js"></script>
-<script src="JS/player.js"></script>
 
 </body>
 
